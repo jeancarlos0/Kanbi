@@ -3,9 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/card.css">
     <title>Document</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Kanbi</h1>
+        <button id="themeSwitch"><img src="icons/moon.svg" alt="theme icon" id="themeIcon"></button>
+    </header>
+
+    <main class="main-container">
+        <div class="tasks-container">
+            <div class="container-header">
+                <h3>To do</h3>
+                <button>New task<i><img src="icons/plus.svg" alt=""></i></button>
+            </div>
+            <div class="card" draggable="true">
+                <div class="card-header">
+                    <h3>Estudar JavaScript</h3>
+                    <span class="priority"></span>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. 
+                </p>
+            </div>
+        </div>
+        <div class="tasks-container">
+            <div class="container-header">
+                <h3>Doing</h3>
+                <button>New task<i><img src="icons/plus.svg" alt=""></i></button>
+            </div>
+        </div>
+        <div class="tasks-container">
+            <div class="container-header">
+                <h3>Done</h3>
+                <button>New task<i><img src="icons/plus.svg" alt=""></i></button>
+            </div>
+        </div>
+    </main>
+    <script src="scripts/index.js"></script>
 </body>
 </html>

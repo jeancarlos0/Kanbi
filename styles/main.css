@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: #303960;
+    --bg-color: #F6F6F6;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: medium;
+}
+
+button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgba(98, 173, 216, 0.377);
+}
+
+header{
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 12px 48px;
+    width: 100%;
+    box-shadow: 4px 4px 6px #3a3a3a2f;
+}
+
+header h1{
+    font-size: 28px;
+}
+header button{
+    margin-top: 5px;
+    padding: 8px;
+    border-radius: 4px;
+    outline: none;
+}
+
+.main-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.tasks-container{
+    background-color: var(--bg-color);
+    height: 85vh;
+    width: 100%;
+    max-width: 420px;
+    margin-top: 16px;
+    border-radius: 8px;
+}
+
+.tasks-container .container-header{
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    border-radius: 8px 8px 0 0;
+    padding: 12px 18px; 
+}
+
+
+
+.tasks-container .container-header button{
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    width: 90px;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+.tasks-container .container-header button:hover{
+    background-color: rgba(98, 173, 216, 0.377);
+}
