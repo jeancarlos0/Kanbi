@@ -3,7 +3,12 @@ const containers = document.querySelectorAll('.tasks-container');
 const tasks = document.querySelectorAll('.card');
 const btnTheme = document.getElementById('themeSwitch');
 const icon = document.getElementById('themeIcon')
+const btnAddTask = document.querySelector('.create-task-form input');
+const prioritySelector = document.querySelector('.create-task-form .priority-form');
+const modal = document.querySelector('.create-task-modal');
+const btnNewTask = document.querySelector('.main-container button');
 
+//Váriavel global que indica qual tema está sendo usado
 var isDark = true;
 
 btnTheme.addEventListener('click', function(){
@@ -28,6 +33,15 @@ btnTheme.addEventListener('click', function(){
     });
 
     isDark = !isDark;
+});
+
+prioritySelector.addEventListener('click', (event) =>{
+    console.log(event.target);
+    event.target.style.borderColor = 'black'
+});
+
+btnNewTask.addEventListener('click', ()=>{
+    modal.classList.add('show');
 });
 
 
