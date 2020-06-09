@@ -71,7 +71,9 @@ header button{
     padding: 12px 18px; 
 }
 
-
+.tasks-container .container-header img{
+    pointer-events: none;
+}
 
 .tasks-container .container-header button{
     border: none;
@@ -84,6 +86,7 @@ header button{
     border-radius: 4px;
     padding: 4px 8px;
 }
+
 
 .tasks-container .container-header button:hover{
     background-color: rgba(98, 173, 216, 0.377);
@@ -105,7 +108,7 @@ header button{
 
 .create-task-form{
     width: 600px;
-    height: 400px;
+    height: 500px;
     background-color: rgb(255, 255, 255);
     border-radius: 8px;
     display: flex;
@@ -126,7 +129,6 @@ header button{
     height: 48px;
     border-radius: 4px;
     border-style: none;
-    margin-bottom: 16px;
     outline-color: rgba(98, 173, 216, 0.377);
 }
 
@@ -161,11 +163,10 @@ header button{
 }
 
 .create-task-form .priority-form .priority-selector{
+    background: var(--primary-color);
+    cursor: pointer;
     display: block;
     height: 32px;
-    width: 32px;
-    border-radius: 50%;
-    border: 2px solid #FFFFFF;
     margin-left: 32px;
 }
 
@@ -197,4 +198,18 @@ header button{
 
 .create-task-modal.show{
     display: flex;
+}
+
+.create-task-form .btnClose{
+    border-radius: 4px;
+    margin: 0 5% 0 0;
+    padding: 4px;
+    background: none;
+    height: 32px;
+    width: 32px;
+    align-self: flex-end;
+}
+
+.create-task-form .btnClose:hover{
+    background-color: rgba(98, 173, 216, 0.377);;
 }

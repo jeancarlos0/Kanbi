@@ -15,10 +15,10 @@
     </header>
 
     <main class="main-container">
-        <div class="tasks-container">
+        <div class="tasks-container todo">
             <div class="container-header">
                 <h3>To do</h3>
-                <button>New task<i><img src="icons/plus.svg" alt=""></i></button>
+                <button class="newTask">New task<img src="icons/plus.svg" alt=""></button>
             </div>
             <div class="card" draggable="true">
                 <div class="card-header">
@@ -30,31 +30,42 @@
                 </p>
             </div>
         </div>
-        <div class="tasks-container">
+        <div class="tasks-container doing">
             <div class="container-header">
                 <h3>Doing</h3>
-                <button>New task<i><img src="icons/plus.svg" alt=""></i></button>
+                <button class="newTask">New task<img src="icons/plus.svg" alt=""></button>
             </div>
         </div>
-        <div class="tasks-container">
+        <div class="tasks-container done">
             <div class="container-header">
                 <h3>Done</h3>
-                <button>New task<i><img src="icons/plus.svg" alt=""></i></button>
+                <button class="newTask">New task<img src="icons/plus.svg" alt=""></button>
             </div>
         </div>
     </main>
 
     <div class="create-task-modal">
         <div class="create-task-form">
+            <button class="btnClose"><img src="icons/x.svg" alt=""></button>
             <div class="input-task">
                 <h3>Título da tarefa</h3>
-                <input type="text" name="" id="">
+                <input type="text" name="" id="task-title">
             </div>
             <div class="input-task">
                 <h3>Descrição da tarefa</h3>
                 <input type="text" name=""id="task-description">
             </div>
             <div class="priority-form">
+                
+                <h3>Prioridade</h3>
+                <input type="radio" id="min" name="gender" value="1" class="priority-selector">
+                <label for="min">Baixa</label>
+                <input type="radio" id="media" name="gender" value="2" class="priority-selector">
+                <label for="meddia">Média</label>
+                <input type="radio" id="max" name="gender" value="3" class="priority-selector">
+                <label for="max">Máxima</label>
+                
+                <!--
                 <h3>Prioridade</h3>
                 <span class="priority-selector min"></span>
                 <h4>Minima</h4>
@@ -62,8 +73,9 @@
                 <h4>Média</h4>
                 <span class="priority-selector max"></span>
                 <h4>Maxima</h4>
+                -->
             </div>
-            <button>Adicionar nova tarefa</button>
+            <button class="btnAddTask">Adicionar nova tarefa</button>
         </div>
     </div>
 
