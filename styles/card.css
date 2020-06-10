@@ -45,3 +45,16 @@
     color: white;
     background-color: #374955;
 }
+
+.card .priority.min{
+    background-color: #50D890;
+}
+
+.card .priority.medium{
+    background-color: #FFD31D;
+}
+
+.card .priority.max{
+    background-color: #EE2641;
+}
+

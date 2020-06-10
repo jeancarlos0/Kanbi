@@ -3,82 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/card.css">
     <title>Document</title>
 </head>
 <body>
-    <header>
+    <div class="home-container">
         <h1>Kanbi</h1>
-        <button id="themeSwitch"><img src="icons/moon.svg" alt="theme icon" id="themeIcon"></button>
-    </header>
+        <a href="app.html">Ir ao kanbi<img src="icons/arrow-right.svg" alt=""></a>
 
-    <main class="main-container">
-        <div class="tasks-container todo">
-            <div class="container-header">
-                <h3>To do</h3>
-                <button class="newTask">New task<img src="icons/plus.svg" alt=""></button>
-            </div>
-            <div class="card" draggable="true">
-                <div class="card-header">
-                    <h3>Estudar JavaScript</h3>
-                    <span class="priority"></span>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. 
-                </p>
-            </div>
-        </div>
-        <div class="tasks-container doing">
-            <div class="container-header">
-                <h3>Doing</h3>
-                <button class="newTask">New task<img src="icons/plus.svg" alt=""></button>
-            </div>
-        </div>
-        <div class="tasks-container done">
-            <div class="container-header">
-                <h3>Done</h3>
-                <button class="newTask">New task<img src="icons/plus.svg" alt=""></button>
-            </div>
-        </div>
-    </main>
-
-    <div class="create-task-modal">
-        <div class="create-task-form">
-            <button class="btnClose"><img src="icons/x.svg" alt=""></button>
-            <div class="input-task">
-                <h3>Título da tarefa</h3>
-                <input type="text" name="" id="task-title">
-            </div>
-            <div class="input-task">
-                <h3>Descrição da tarefa</h3>
-                <input type="text" name=""id="task-description">
-            </div>
-            <div class="priority-form">
-                
-                <h3>Prioridade</h3>
-                <input type="radio" id="min" name="gender" value="1" class="priority-selector">
-                <label for="min">Baixa</label>
-                <input type="radio" id="media" name="gender" value="2" class="priority-selector">
-                <label for="meddia">Média</label>
-                <input type="radio" id="max" name="gender" value="3" class="priority-selector">
-                <label for="max">Máxima</label>
-                
-                <!--
-                <h3>Prioridade</h3>
-                <span class="priority-selector min"></span>
-                <h4>Minima</h4>
-                <span class="priority-selector medium"></span>
-                <h4>Média</h4>
-                <span class="priority-selector max"></span>
-                <h4>Maxima</h4>
-                -->
-            </div>
-            <button class="btnAddTask">Adicionar nova tarefa</button>
-        </div>
+        <img src="icons/background.png" alt="" id="home-bg">
     </div>
-
-    <script src="scripts/index.js"></script>
 </body>
 </html>

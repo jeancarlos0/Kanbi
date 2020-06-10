@@ -1,18 +1,29 @@
 const btnTheme = document.getElementById('themeSwitch');
 const btnAddTask = document.querySelector('.create-task-form .btnAddTask');
 const prioritySelector = document.querySelector('.create-task-form .priority-form');
+const priorityType = document.getElementsByName('priority');
 const modal = document.querySelector('.create-task-modal');
-//const btnNewTask = document.querySelector('.main-container button');
 const btnsNewTask = document.querySelectorAll('.main-container .newTask');
-
 const btnClose = document.querySelector('.create-task-form .btnClose');
-
 const taskTitle = document.getElementById('task-title');
 const taskDescription = document.getElementById('task-description');
 
 //Váriavel global que indica qual tema está sendo usado
-var isDark = true;
-var container;
+let isDark = true;
+let container;
+
+/*
+let TaskItem(){
+    
+
+
+    addTask: function(){
+
+    }
+
+}
+
+*/
 
 function updateTheme(){
     
@@ -49,16 +60,8 @@ function updateTheme(){
 
     isDark = !isDark;
 }
+
 btnTheme.addEventListener('click', updateTheme);
-
-prioritySelector.addEventListener('click', (event) =>{
-    console.log(event.target);
-    const priotityType = event.target;
-
-    
-
-    //priotityType.classList.toggle('selected');
-});
 
 btnsNewTask.forEach(btn =>{
     btn.addEventListener('click', ()=>{
@@ -67,11 +70,6 @@ btnsNewTask.forEach(btn =>{
     });
 })
 
-/*
-btnNewTask.addEventListener('click', ()=>{
-    modal.classList.add('show');
-});
-*/
 btnClose.addEventListener('click', ()=>{
     modal.classList.remove('show');
 })
@@ -82,33 +80,23 @@ btnAddTask.addEventListener('click', createTask);
 function createTask(){
     var title = taskTitle.value;
     var desc = taskDescription.value;
+    var prio;
+    priorityType.forEach(type =>{
+        if(type.checked){
+            prio = type.value;
+        }
+    })
+
     console.log(container);
-    const task = `<div class="card" draggable="true"><div class="card-header"><h3>${title}</h3><span class="priority"></span>
+    const task = `<div class="card" draggable="true"><div class="card-header"><h3>${title}</h3><span class="priority ${prio}"></span>
     </div><p>${desc}</p></div>`;
-
-
 
     container.insertAdjacentHTML("beforeEnd",task); 
 
 }
 
-function addNewTask(container){
+function addNewTask(){
     modal.classList.add('show');
-    
-    
-    //console.log(event.target.parentNode.parentNode);
-    //console.log(event.target);
-    //const container = event.target.parentNode.parentNode;
-    
-    console.log(container);
-    //const task = `<div class="card" draggable="true"><div class="card-header"><h3>${title}</h3><span class="priority"></span>
-    //</div><p>${desc}</p></div>`;
-
-
-   // createTask(container, title, desc);
-    //container.insertAdjacentHTML("beforeEnd",task); 
-
-    //updateTheme();
 }
 
 
