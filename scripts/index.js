@@ -8,22 +8,78 @@ const btnClose = document.querySelector('.create-task-form .btnClose');
 const taskTitle = document.getElementById('task-title');
 const taskDescription = document.getElementById('task-description');
 
-//Váriavel global que indica qual tema está sendo usado
+const dropzones = document.querySelectorAll('.tasks-container');
+let cards;
+
+//Váriavel global que indica qual tema está sendo usado para definir o tema
 let isDark = true;
 let container;
 
-/*
-let TaskItem(){
+
+init();
+
+function updateCards(){
+
+    cards = document.querySelectorAll('.card');
     
+    cards.forEach((card)=>{
+        card.addEventListener('dragstart', dragstart);
+        card.addEventListener('drag', drag);
+        card.addEventListener('dragend', dragend);
+    });
+}
 
+function dragstart(){
+    
+    dropzones.forEach(dropzone=>{
+        dropzone.classList.add('highlight');
+    })
 
-    addTask: function(){
+    //This nesse caso é o cartão que chamou o evento
+    this.classList.add('is-dragging')
+}
 
-    }
+function drag(){
+}
+
+function dragend(){
+    
+    dropzones.forEach(dropzone=>{
+        dropzone.classList.remove('highlight');
+    })
+    this.classList.remove('is-dragging')
+}
+
+dropzones.forEach(dropzone =>{
+    dropzone.addEventListener('dragenter', dragenter);
+    dropzone.addEventListener('dragover', dragover);
+    dropzone.addEventListener('dragleave', dragleave);
+    dropzone.addEventListener('drop', drop);
+})
+
+function dragenter(){
+    
+}
+
+function dragover(){
+    
+    this.classList.add('over')
+
+    //pega o cartão que está sendo arrastado
+    const cardBeinDragged = document.querySelector('.is-dragging');
+    
+    this.appendChild(cardBeinDragged);
 
 }
 
-*/
+function dragleave(){
+    this.classList.remove('over')
+}
+
+function drop(){
+    this.classList.remove('over')
+}
+
 
 function updateTheme(){
     
@@ -81,22 +137,30 @@ function createTask(){
     var title = taskTitle.value;
     var desc = taskDescription.value;
     var prio;
+
+    
     priorityType.forEach(type =>{
         if(type.checked){
             prio = type.value;
         }
     })
 
+
     console.log(container);
     const task = `<div class="card" draggable="true"><div class="card-header"><h3>${title}</h3><span class="priority ${prio}"></span>
     </div><p>${desc}</p></div>`;
 
     container.insertAdjacentHTML("beforeEnd",task); 
+    updateCards();
 
 }
 
 function addNewTask(){
     modal.classList.add('show');
 }
+
+function init(){
+    updateCards();
+};
 
 
